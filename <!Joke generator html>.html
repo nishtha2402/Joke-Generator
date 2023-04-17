@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Joke Generator</title>
+    <script>
+        var jokes = {
+            'funny': [
+                "Why don't scientists trust atoms? Because they make up everything!",
+                "Why did the chicken go to the séance? To talk to the other side!",
+                "Why did the scarecrow win an award? Because he was outstanding in his field!"
+            ],
+            'dad': [
+                "Why couldn't the bicycle find its way home? It lost its bearings!",
+                "Singing in the shower is fun until you get soap in your mouth. Then it's a soap opera.",
+                "What did one wall say to the other? I'll meet you at the corner."
+            ],
+            'knock-knock': [
+                "Knock, knock. Who is there? Luke. Luke who? Luke through the peep hole and find out.",
+                "Knock, knock. Who is there?Cow says.Cow says who? No, a cow says mooooo!",
+                "Knock, knock. Who is there? Woo. Woo who? Glad you are excited, too!"
+            ]
+        };
+
+        function getRandomJoke() {
+            var category = document.getElementById("category").value;
+            var jokesList = jokes[category];
+            var joke = jokesList[Math.floor(Math.random() * jokesList.length)];
+            document.getElementById("joke").innerHTML = joke;
+        }
+    </script>
+</head>
+<body>
+    <h1>Joke Generator</h1>
+    <label for="category">Choose a category:</label>
+    <select id="category">
+        <option value="funny">Funny</option>
+        <option value="dad">Dad Jokes</option>
+        <option value="knock-knock">Knock-knock Jokes</option>
+    </select>
+    <br>
+    <button onclick="getRandomJoke()">Get Joke</button>
+    <br>
+    <p id="joke"></p>
+</body>
+</html>
